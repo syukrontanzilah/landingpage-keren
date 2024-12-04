@@ -12,7 +12,7 @@ export const Hero = () => {
         {/* Title and description hero */}
         <div className='md:w-[478px]'>
           <div className="tag">Version 2.0 is here</div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">Pathway to productivity</h1>
+          <h1 className="bg-gradient-text font-bold text-5xl md:text-7xl mt-6">Pathway to productivity</h1>
           <p className="text-xl text-[#010d3e] tracking-tight mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam assumenda asperiores dignissimos nemo error incidunt explicabo animi ullam quo reiciendis! </p>
           <div className="flex gap-1 items-center mt-[30px]">
             <button className="btn btn-primary">Get for free</button>
