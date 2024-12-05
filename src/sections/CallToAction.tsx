@@ -22,7 +22,7 @@ export const CallToAction = () => {
     <section ref={sectionRef} className="bg-gradient-to-b from-white to-[#d2dcff] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
-          <h2 className="section-title">Sign up for free today</h2>
+          <h2 className="bg-gradient-text text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001e80] text-transparent bg-clip-text mt-5">Sign up for free today</h2>
           <p className="section-description mt-5">
             Celebrate the joy of accomplishment with an app designed to track
             your progress and motivate your effort

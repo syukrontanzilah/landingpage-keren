@@ -70,7 +70,7 @@ export const Pricing = () => {
       <div className="container">
         {/* title header */}
         <div className="section-heading">
-          <h2 className="section-title">Pricing</h2>
+          <h2 className="bg-gradient-text text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001e80] text-transparent bg-clip-text mt-5">Pricing</h2>
           <p className="section-description mt-5">
             Free forever. Upgrade for unlimited task, better security, and
             exclusive features.

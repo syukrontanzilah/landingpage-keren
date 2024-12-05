@@ -152,7 +152,7 @@ export const Testimonials = () => {
           <div className="flex justify-center">
             <div className="tag">Testimonials</div>
           </div>
-          <h2 className="section-title mt-5">What our users say</h2>
+          <h2 className="bg-gradient-text text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001e80] text-transparent bg-clip-text mt-5">What our users say</h2>
           <p className="section-description mt-5">
             From intuitive design to powerful futures, our app has become an
             essential tool for users around the world.

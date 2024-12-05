@@ -27,7 +27,7 @@ export const ProductShowcase = () => {
             <div className="tag">Boost your productivity</div>
           </div>
 
-          <h2 className="section-title mt-5">
+          <h2 className="bg-gradient-text text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001e80] text-transparent bg-clip-text mt-5">
             A more effective way to track progress
           </h2>
           <p className="section-description mt-5">
