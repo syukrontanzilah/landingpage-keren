@@ -1,3 +1,4 @@
+"use client";
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
@@ -9,6 +10,13 @@ import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "framer-motion";
+import React, { useRef } from "react";
 
 const testimonials = [
   {
@@ -85,35 +93,52 @@ interface testyProps {}
 const TestimonialsColumn = (props: {
   className?: string;
   testimonials: typeof testimonials;
+  duration?: number;
 }) => {
   return (
-    <div className={twMerge("flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]", props.className)}>
-      {props.testimonials?.map(
-        ({ id, text, imageSrc, name, username }, index) => {
-          return (
-            <div className="card" key={id}>
-              <div>{text}</div>
-              <div className="flex flex-row items-center gap-2 mt-5">
-                <Image
-                  width={40}
-                  height={40}
-                  src={imageSrc}
-                  alt="img-testi"
-                  className="h-10 w-10 rounded-full"
-                />
-                <div className="flex flex-col">
-                  <div className="font-medium tracking-tight leading-5">
-                    {name}
+    <div className={props.className}>
+      <motion.div 
+      animate={{
+        translateY: "-50%"
+      }}
+      transition={{
+        duration: props.duration || 10,
+        repeat: Infinity,
+        ease:'linear',
+        repeatType: "loop",
+      }}
+      className="flex flex-col gap-6 pb-6 ">
+        {[...new Array(2)].fill(0).map((_, index) => (
+          <React.Fragment key={index}>
+            {props.testimonials?.map(
+              ({ id, text, imageSrc, name, username }, index) => {
+                return (
+                  <div className="card" key={id}>
+                    <div>{text}</div>
+                    <div className="flex flex-row items-center gap-2 mt-5">
+                      <Image
+                        width={40}
+                        height={40}
+                        src={imageSrc}
+                        alt="img-testi"
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <div className="flex flex-col">
+                        <div className="font-medium tracking-tight leading-5">
+                          {name}
+                        </div>
+                        <div className="leading-5 tracking-tight text-sm">
+                          {username}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="leading-5 tracking-tight text-sm">
-                    {username}
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        }
-      )}
+                );
+              }
+            )}
+          </React.Fragment>
+        ))}
+      </motion.div>
     </div>
   );
 };
@@ -134,10 +159,18 @@ export const Testimonials = () => {
           </p>
         </div>
         {/* Card list */}
-        <div className="flex justify-center gap-6">
-          <TestimonialsColumn testimonials={firstColumn} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:flex"/>
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:flex"/>
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={15}/>
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={19}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={17}
+          />
         </div>
       </div>
     </section>

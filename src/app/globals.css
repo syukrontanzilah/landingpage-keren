@@ -11,7 +11,9 @@
 }
 
 .bg-rainbow-text {
-  background: linear-gradient(to right, #dd7ddf, #e1cd86, #bbcb92, #71c2ef, #3bffff, #dd7ddf);
+  background: linear-gradient(to right, #dd7ddf, #e1cd86, #bbcb92, #71c2ef, #3bffff, #dd7ddf, #71c2ef, #3bffff, #dd7ddf );
+  background-size: 200%; 
+  background-position: 0 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
